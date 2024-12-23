@@ -1,12 +1,13 @@
-import Message from "./component/MessageComponent.tsx";
+
+import {Users} from "./utils/data";
+import UserComponent from "./pages/UserComponent.tsx";
 
 function App() {
 
   return (
       <section>
-          <Message firstName="Achille" lastName="Mbougueng" email="achille.mbougueng@yahoo.fr"/>
-          <Message firstName="chillo" lastName="TECH"  phone={998887}/>
-          <Message firstName="dev" lastName="OPS" />
+
+          <UserComponent tabUsers={Users} />
       </section>
   )
 }

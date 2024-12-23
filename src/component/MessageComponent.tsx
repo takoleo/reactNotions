@@ -1,24 +1,23 @@
 type Props={
-    firstName:string;
-    lastName: string;
+    firstName?:string;
+    lastName?: string;
     email?:string;
     phone?:number;
-    texte:string;
+    text:string;
 }
 
 function  Message(props:Props){
     return (
-
-     <>
+     <div className="message">
         <p>
-            {props.texte} {props.firstName} {props.lastName}
+            {props.text} {props.firstName} {props.lastName}
         </p>
 
-        <p>
+         <p>
             {props?.email && <span>{props.email}</span>   }
             {props?.phone ? <span>{props.phone}</span> : null  }
         </p>
-     </>
+     </div>
     );
 
 }
