@@ -18,18 +18,19 @@ type Props={
 }
 
 function UserComponent(props:Props){
-    const usersFromTab= props.tabUsers;
+    //destruturer les prop
+    //const usersFromTab= props.tabUsers;
+    const { tabUsers } = props;
     return(
-        <section className="grid">
-            {usersFromTab.map((user:User)=>(
-                <article className="user">
-                    <h3>
-                        {user.firstName}
-                        {user.lastName}
+        <section className="grid md:grid-cols-3 gap-4 ">
+            {tabUsers.map(({firstName,lastName,phone,email}:User)=>(
+                <article className=" text-base rounded-lg bg-gray-400 border border-pink-800 p-1.5">
+                    <h3 className="text-xl">
+                        {firstName} {lastName}
                     </h3>
-                    <p>
-                        {user.email}
-                        {user.phone}
+                    <p className="text-xs">
+                        {email}
+                        {phone}
                     </p>
                 </article>
             ))}
