@@ -176,7 +176,6 @@ const  Users=[
         "lastName": "Rivers",
         "company": "MIRACULA",
         "birthDate": "2019-05-06T02:45:38 -01:00",
-        "email": "riversday@miracula.com",
         "phone": "+1 (956) 455-2434",
         "address": "976 Prospect Place, Grazierville, Oregon, 8575",
         "about": "excepteur commodo culpa aliquip dolor in labore minim officia Lorem"
@@ -189,7 +188,6 @@ const  Users=[
         "lastName": "Salazar",
         "company": "ROTODYNE",
         "birthDate": "2021-03-03T04:11:02 -01:00",
-        "email": "salazarday@rotodyne.com",
         "phone": "+1 (971) 511-2098",
         "address": "998 Conover Street, Belleview, Arkansas, 1996",
         "about": "officia magna mollit consectetur fugiat elit labore in est tempor"
