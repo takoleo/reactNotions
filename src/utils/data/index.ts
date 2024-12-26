@@ -1,7 +1,7 @@
 const  Users=[
     {
         "id": "6769f1eaeb1099ca3e93ed63",
-        "gender": "female",
+        "gender": "male",
         "picture": "http://placehold.it/32x32",
         "firstName": "Albert",
         "lastName": "Millie",
@@ -27,7 +27,7 @@ const  Users=[
     },
     {
         "id": "6769f1ea766eebe98a1f413f",
-        "gender": "female",
+        "gender": "male",
         "picture": "http://placehold.it/32x32",
         "firstName": "Serrano",
         "lastName": "Jeannie",
@@ -53,7 +53,7 @@ const  Users=[
     },
     {
         "id": "6769f1ea7f79b31f3c6481b2",
-        "gender": "male",
+        "gender": "female",
         "picture": "http://placehold.it/32x32",
         "firstName": "Roman",
         "lastName": "Stafford",
@@ -79,7 +79,7 @@ const  Users=[
     },
     {
         "id": "6769f1ea8ad373bbbbb74307",
-        "gender": "male",
+        "gender": "female",
         "picture": "http://placehold.it/32x32",
         "firstName": "Jasmine",
         "lastName": "Alba",
@@ -131,7 +131,7 @@ const  Users=[
     },
     {
         "id": "6769f1ea83e8f2a364f1a242",
-        "gender": "male",
+        "gender": "female",
         "picture": "http://placehold.it/32x32",
         "firstName": "Sanders",
         "lastName": "Juliana",
