@@ -1,4 +1,6 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {Users} from "../user/users.tsx";
+import {Link} from "react-router-dom";
 
 type User={
     id: string;
@@ -12,16 +14,16 @@ type User={
     address: string;
     about: string;
 };
-
+/*
 type Props={
     tabUsers: User[];
-}
+}*/
 
-function UserComponent({tabUsers}:Props){
+function UserComponent(){
     //let userUnSorted= tabUsers;
     // hook useState
-    const [userUnSorted, setUserSorted]=useState(tabUsers)
-    const [alphabetOrder, setAlphabetOrder]=useState(1) // valeur de l'ordre definir positivement par defaut
+    const [userUnSorted, setUserSorted]=useState(Users)
+    const [alphabetOrder, setAlphabetOrder]=useState(1) // valeur de l'ordre definir positivement par defaut(accendant)
 
 
     // ==============================function to sort by man or women==============================//
@@ -83,6 +85,25 @@ function UserComponent({tabUsers}:Props){
     //destruturer les prop
     //const usersFromTab= props.tabUsers;
     //const { tabUsers } = props;
+
+    /*const getUsers = ()=>{
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then((response) => response.json())
+            .then((users) => setUserSorted(users))
+    }*/
+
+    const getUsersWithAsynAwait = async ()=>{
+      const response = await  fetch('https://jsonplaceholder.typicode.com/users')
+          const users = await  response.json()
+          setUserSorted(users);
+    }
+
+    useEffect(()=>{
+        //getUsers();
+          getUsersWithAsynAwait();
+    },[]);
+
+
     return(
         <section >
             <div className="flex justify-end my-2 gap-2 items-center">
@@ -104,7 +125,9 @@ function UserComponent({tabUsers}:Props){
 
             <div className="grid md:grid-cols-3 gap-4 ">
             {userUnSorted.map(({id,gender,firstName,lastName,phone,email="indisponible"}:User)=>(
-                <article className=" text-base rounded-lg bg-gray-400 border border-pink-800 p-1.5" key={id}>
+                <Link to={`/dashboard/details/${id}`}
+                      className=" text-base rounded-lg bg-gray-400 border border-pink-800 p-1.5" key={id}>
+
                     <h3 className="text-xl">
                          {firstName}
                          {lastName}
@@ -116,7 +139,7 @@ function UserComponent({tabUsers}:Props){
                     <p className="text-xs">
                         {phone}
                     </p>
-                </article>
+                </Link>
             ))}
             </div>
         </section>
