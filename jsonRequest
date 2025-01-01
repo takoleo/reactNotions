@@ -1,0 +1,48 @@
+[
+  '{{repeat(10, 15)}}',
+  {
+    _id: '{{objectId()}}',
+    picture: 'http://placehold.it/32x32',
+    comment: '{{lorem(10, "word")}}',
+    status:'{{random("NEW", "VALIDATED", "REJECTED", "ON_GOING")}}',
+    registered: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+    child: {
+			 gender: '{{gender()}}',
+             eyeColor: '{{random("blue", "brown", "green")}}',
+             firstName: '{{firstName()}}' ,
+             lastName: '{{firstName()}}',
+             birthDate: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}'
+         },
+    
+    firstParent: {
+             gender: '{{gender()}}',
+             eyeColor: '{{random("blue", "brown", "green")}}',
+             firstName: '{{firstName()}}' ,
+             lastName: '{{firstName()}}',
+      		 email: '{{email()}}',
+      		 phone: '+1 {{phone()}}',
+              address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}'
+             
+    },
+    
+     secondParent: {
+             gender: '{{gender()}}',
+             eyeColor: '{{random("blue", "brown", "green")}}',
+             firstName: '{{firstName()}}' ,
+             lastName: '{{firstName()}}',
+      		 email: '{{email()}}',
+      		 phone: '+1 {{phone()}}',
+             address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}'
+             
+    },
+    
+    compagny:{
+             name: '{{company().toUpperCase()}}',
+             address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}'
+    
+    
+    
+
+    }
+  }
+]
